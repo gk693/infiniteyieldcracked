@@ -324,7 +324,7 @@ Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 250, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
-Title.Text = "Infinite Yield FE CRACKED v" .. currentVersion
+Title.Text = "infinite yield cracked v" .. currentVersion
 
 do
 	local emoji = ({
@@ -13073,4 +13073,4 @@ task.spawn(function()
 	IntroBackground:Destroy()
 	minimizeHolder()
 end)
-notify("this a forked version of IY\ndon't complain if there's bugs")
+notify("reminder" "this is a forked version of IY\ndon't complain if there's bugs")
