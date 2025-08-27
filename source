@@ -6478,12 +6478,10 @@ addcmd('clraliases',{},function(args, speaker)
 end)
 
 addcmd('discord', {'support', 'help'}, function(args, speaker)
-	if everyClipboard then
-		toClipboard('https://discord.com/invite/dYHag43eeU')
-		notify('Discord Invite', 'Copied to clipboard!\ndiscord.gg/dYHag43eeU')
-	else
-		notify('Discord Invite', 'discord.gg/dYHag43eeU')
-	end
+	notify('Discord Invite', 'there is none 😢')
+
+	--[[
+	idk wtf this is
 	if httprequest then
 		httprequest({
 			Url = 'http://127.0.0.1:6463/rpc?v=1',
@@ -6499,6 +6497,7 @@ addcmd('discord', {'support', 'help'}, function(args, speaker)
 			})
 		})
 	end
+	]]
 end)
 
 addcmd('keepiy', {}, function(args, speaker)
