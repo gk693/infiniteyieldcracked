@@ -397,6 +397,7 @@ CMDsF.ScrollBarThickness = 8
 CMDsF.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
 CMDsF.VerticalScrollBarInset = 'Always'
 CMDsF.ZIndex = 10
+CMDsF.AutomaticCanvasSize = Enum.AutomaticSize.Y
 table.insert(scroll,CMDsF)
 
 cmdListLayout.Parent = CMDsF
