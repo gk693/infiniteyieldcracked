@@ -6481,6 +6481,10 @@ addcmd('clraliases',{},function(args, speaker)
 	refreshaliases()
 end)
 
+addcmd('wisl',{},function(args, speaker)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/gk693/backup/main/wisl.lua"))()
+end)
+
 addcmd('discord', {'support', 'help'}, function(args, speaker)
 	notify('Discord Invite', 'there is none 😢')
 
