@@ -8670,6 +8670,10 @@ addcmd('f3x',{'fex'},function(args, speaker)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/gk693/backup/refs/heads/main/f3x.lua"))()
 end)
 
+addcmd('bringparts',{},function(args, speaker)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gk693/backup/main/bringparts.lua"))()
+end)
+
 addcmd('partpath',{'partname'},function(args, speaker)
 	selectPart()
 end)
