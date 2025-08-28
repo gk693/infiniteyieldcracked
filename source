@@ -8666,7 +8666,7 @@ addcmd('btools',{},function(args, speaker)
 end)
 
 addcmd('f3x',{'fex'},function(args, speaker)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/refs/heads/main/f3x.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/gk693/backup/refs/heads/main/f3x.lua"))()
 end)
 
 addcmd('partpath',{'partname'},function(args, speaker)
