@@ -11494,6 +11494,15 @@ addcmd('grippos',{},function(args, speaker)
 	end
 end)
 
+addcmd('lifeforce',{},function(args, speaker)
+	local audio = game:HttpGet("https://github.com/gk693/backup/raw/refs/heads/main/life_force_rj_pasim.mp3")
+	local id = getcustomasset(audio)
+	local sound = Instance.new("Sound", game.Players.LocalPlayer.PlayerGui)
+	sound.SoundId = id
+	sound.Looped = true
+	sound:Play()
+end)
+
 addcmd('usetools', {}, function(args, speaker)
 	local Backpack = speaker:FindFirstChildOfClass("Backpack")
 	local amount = tonumber(args[1]) or 1
