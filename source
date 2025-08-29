@@ -11495,12 +11495,17 @@ addcmd('grippos',{},function(args, speaker)
 end)
 
 addcmd('lifeforce',{},function(args, speaker)
+	local suc, err = pcall(function()
 	local audio = game:HttpGet("https://github.com/gk693/backup/raw/refs/heads/main/life_force_rj_pasim.mp3")
 	local id = getcustomasset(audio)
 	local sound = Instance.new("Sound", game.Players.LocalPlayer.PlayerGui)
 	sound.SoundId = id
 	sound.Looped = true
 	sound:Play()
+	end)
+	if not suc then
+		error(err)
+	end
 end)
 
 addcmd('usetools', {}, function(args, speaker)
