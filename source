@@ -45,6 +45,12 @@ getgc = missing("function", getgc or get_gc_objects)
 setthreadidentity = missing("function", setthreadidentity or (syn and syn.set_thread_identity) or syn_context_set or setthreadcontext)
 replicatesignal = missing("function", replicatesignal)
 
+storage = "infiniteyieldcracked"
+
+if not isfolder(storage) then
+	makefolder(storage)
+end
+
 COREGUI = cloneref(game:GetService("CoreGui"))
 Players = cloneref(game:GetService("Players"))
 UserInputService = cloneref(game:GetService("UserInputService"))
@@ -11497,7 +11503,10 @@ end)
 addcmd('lifeforce',{},function(args, speaker)
 	local suc, err = pcall(function()
 	local audio = game:HttpGet("https://github.com/gk693/backup/raw/refs/heads/main/life_force_rj_pasim.mp3")
-	local id = getcustomasset(audio)
+	if not isfile(storage .. "/lifeforce.mp3") then
+		writefile(storage .. "/lifeforce.mp3", audio)
+	end
+	local id = getcustomasset(readfile(storage .. "/lifeforce.mp3"))
 	local sound = Instance.new("Sound", game.Players.LocalPlayer.PlayerGui)
 	sound.SoundId = id
 	sound.Looped = true
