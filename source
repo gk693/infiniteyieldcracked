@@ -625,7 +625,7 @@ On2.TextColor3 = Color3.new(0, 0, 0)
 On2.ZIndex = 10
 
 local NotifySound = true
-local NotifySound = "rbxassetid://15675043410"
+local NotifySoundId = "rbxassetid://15675043410"
 -- my own toggle system - gk693
 On2.Activated:Connect(function()
 	NotifySound = not NotifySound
@@ -3248,6 +3248,9 @@ end
 
 pinNotification = nil
 local notifyCount = 0
+local NotifSound = Instance.new("Sound", Notification)
+NotifSound.SoundId = NotifySoundId
+NotifSound.Volume = 1
 function notify(text,text2,length)
 	task.spawn(function()
 		local LnotifyCount = notifyCount+1
@@ -3274,6 +3277,9 @@ function notify(text,text2,length)
 			Text_2.Text = text
 		end
 		Notification:TweenPosition(UDim2.new(1, Notification.Position.X.Offset, 1, -100), "InOut", "Quart", 0.5, true, nil)
+		if NotifySound then
+			NotifSound:Play()
+		end
 		CloseButton.MouseButton1Click:Connect(function()
 			Notification:TweenPosition(UDim2.new(1, Notification.Position.X.Offset, 1, 0), "InOut", "Quart", 0.5, true, nil)
 			closepressed = true
