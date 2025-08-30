@@ -125,14 +125,14 @@ end
 if makefolder and isfolder and writefile and isfile then
     pcall(function() -- good executor trust
         local assets = "https://raw.githubusercontent.com/gk693/backup/refs/heads/main/"
-        for _, folder in {"infiniteyield", "infiniteyield/assets"} do
+        for _, folder in {"infiniteyieldcracked", "infiniteyieldcracked/assets"} do
             if not isfolder(folder) then
                 makefolder(folder)
             end
         end
         for path in iyassets do
             if not isfile(path) then
-                writefile(path, game:HttpGet((path:gsub("infiniteyield/", assets))))
+                writefile(path, game:HttpGet((path:gsub("infiniteyieldcracked/", assets))))
             end
         end
         if IsOnMobile then writefile("infiniteyield/assets/.nomedia") end
@@ -590,7 +590,7 @@ Button.ZIndex = 10
 table.insert(shade3,Button)
 
 Button2.Name = "Button"
-Button2.Parent = StayOpen
+Button2.Parent = NotifySoundToggle
 Button2.BackgroundColor3 = Color3.fromRGB(78, 78, 79)
 Button2.BorderSizePixel = 0
 Button2.Position = UDim2.new(1, -20, 0, 0)
@@ -612,7 +612,7 @@ On.TextColor3 = Color3.new(0, 0, 0)
 On.ZIndex = 10
 
 On2.Name = "On"
-On2.Parent = Button
+On2.Parent = Button2
 On2.BackgroundColor3 = Color3.fromRGB(150, 150, 151)
 On2.BackgroundTransparency = 1
 On2.BorderSizePixel = 0
