@@ -493,68 +493,6 @@ PrefixBox.ZIndex = 10
 table.insert(shade3,PrefixBox)
 table.insert(text2,PrefixBox)
 
-function makeSettingsButton(name,iconID,off)
-	local button = Instance.new("TextButton")
-	button.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
-	button.BorderSizePixel = 0
-	button.Position = UDim2.new(0,0,0,0)
-	button.Size = UDim2.new(1,0,0,25)
-	button.Text = ""
-	button.ZIndex = 10
-	local icon = Instance.new("ImageLabel")
-	icon.Name = "Icon"
-	icon.Parent = button
-	icon.Position = UDim2.new(0,5,0,5)
-	icon.Size = UDim2.new(0,16,0,16)
-	icon.BackgroundTransparency = 1
-	icon.Image = iconID
-	icon.ZIndex = 10
-	if off then
-		icon.ScaleType = Enum.ScaleType.Crop
-		icon.ImageRectSize = Vector2.new(16,16)
-		icon.ImageRectOffset = Vector2.new(off,0)
-	end
-	local label = Instance.new("TextLabel")
-	label.Name = "ButtonLabel"
-	label.Parent = button
-	label.BackgroundTransparency = 1
-	label.Text = name
-	label.Position = UDim2.new(0,28,0,0)
-	label.Size = UDim2.new(1,-28,1,0)
-	label.Font = Enum.Font.SourceSans
-	label.TextColor3 = Color3.new(1, 1, 1)
-	label.TextSize = 14
-	label.ZIndex = 10
-	label.TextXAlignment = Enum.TextXAlignment.Left
-	table.insert(shade2,button)
-	table.insert(text1,label)
-	return button
-end
-
-ColorsButton = makeSettingsButton("Edit Theme",getcustomasset("infiniteyield/assets/edittheme.png"))
-ColorsButton.Position = UDim2.new(0, 5, 0, 55)
-ColorsButton.Size = UDim2.new(1, -10, 0, 25)
-ColorsButton.Name = "Colors"
-ColorsButton.Parent = SettingsHolder
-
-Keybinds = makeSettingsButton("Edit Keybinds",getcustomasset("infiniteyield/assets/editkeybinds.png"))
-Keybinds.Position = UDim2.new(0, 5, 0, 85)
-Keybinds.Size = UDim2.new(1, -10, 0, 25)
-Keybinds.Name = "Keybinds"
-Keybinds.Parent = SettingsHolder
-
-Aliases = makeSettingsButton("Edit Aliases",getcustomasset("infiniteyield/assets/editaliases.png"))
-Aliases.Position = UDim2.new(0, 5, 0, 115)
-Aliases.Size = UDim2.new(1, -10, 0, 25)
-Aliases.Name = "Aliases"
-Aliases.Parent = SettingsHolder
-
-Positions = makeSettingsButton("Edit/Goto Waypoints",getcustomasset("infiniteyield/assets/editwaypoints.png"))
-Positions.Position = UDim2.new(0, 5, 0, 145)
-Positions.Size = UDim2.new(1, -10, 0, 25)
-Positions.Name = "Waypoints"
-Positions.Parent = SettingsHolder
-
 StayOpen.Name = "StayOpen"
 StayOpen.Parent = SettingsHolder
 StayOpen.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
@@ -629,6 +567,68 @@ On2.FontSize = Enum.FontSize.Size14
 On2.Text = ""
 On2.TextColor3 = Color3.new(0, 0, 0)
 On2.ZIndex = 10
+
+function makeSettingsButton(name,iconID,off)
+	local button = Instance.new("TextButton")
+	button.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
+	button.BorderSizePixel = 0
+	button.Position = UDim2.new(0,0,0,0)
+	button.Size = UDim2.new(1,0,0,25)
+	button.Text = ""
+	button.ZIndex = 10
+	local icon = Instance.new("ImageLabel")
+	icon.Name = "Icon"
+	icon.Parent = button
+	icon.Position = UDim2.new(0,5,0,5)
+	icon.Size = UDim2.new(0,16,0,16)
+	icon.BackgroundTransparency = 1
+	icon.Image = iconID
+	icon.ZIndex = 10
+	if off then
+		icon.ScaleType = Enum.ScaleType.Crop
+		icon.ImageRectSize = Vector2.new(16,16)
+		icon.ImageRectOffset = Vector2.new(off,0)
+	end
+	local label = Instance.new("TextLabel")
+	label.Name = "ButtonLabel"
+	label.Parent = button
+	label.BackgroundTransparency = 1
+	label.Text = name
+	label.Position = UDim2.new(0,28,0,0)
+	label.Size = UDim2.new(1,-28,1,0)
+	label.Font = Enum.Font.SourceSans
+	label.TextColor3 = Color3.new(1, 1, 1)
+	label.TextSize = 14
+	label.ZIndex = 10
+	label.TextXAlignment = Enum.TextXAlignment.Left
+	table.insert(shade2,button)
+	table.insert(text1,label)
+	return button
+end
+
+ColorsButton = makeSettingsButton("Edit Theme",getcustomasset("infiniteyield/assets/edittheme.png"))
+ColorsButton.Position = UDim2.new(0, 5, 0, 55)
+ColorsButton.Size = UDim2.new(1, -10, 0, 25)
+ColorsButton.Name = "Colors"
+ColorsButton.Parent = SettingsHolder
+
+Keybinds = makeSettingsButton("Edit Keybinds",getcustomasset("infiniteyield/assets/editkeybinds.png"))
+Keybinds.Position = UDim2.new(0, 5, 0, 85)
+Keybinds.Size = UDim2.new(1, -10, 0, 25)
+Keybinds.Name = "Keybinds"
+Keybinds.Parent = SettingsHolder
+
+Aliases = makeSettingsButton("Edit Aliases",getcustomasset("infiniteyield/assets/editaliases.png"))
+Aliases.Position = UDim2.new(0, 5, 0, 115)
+Aliases.Size = UDim2.new(1, -10, 0, 25)
+Aliases.Name = "Aliases"
+Aliases.Parent = SettingsHolder
+
+Positions = makeSettingsButton("Edit/Goto Waypoints",getcustomasset("infiniteyield/assets/editwaypoints.png"))
+Positions.Position = UDim2.new(0, 5, 0, 145)
+Positions.Size = UDim2.new(1, -10, 0, 25)
+Positions.Name = "Waypoints"
+Positions.Parent = SettingsHolder
 
 local NotifySound = true
 local NotifySoundId = "rbxassetid://15675043410"
