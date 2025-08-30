@@ -11509,7 +11509,7 @@ addcmd('lifeforce',{},function(args, speaker)
 	local sound = Instance.new("Sound", game.Players.LocalPlayer.PlayerGui)
 	sound.SoundId = id
 	sound.Looped = true
-	sound.Volume = 10
+	sound.Volume = 2
 	sound:Play()
 end)
 
