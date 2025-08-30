@@ -11,8 +11,6 @@ function missing(t, f, fallback)
     return fallback
 end
 
-local NotifySound = true
-
 cloneref = missing("function", cloneref, function(...) return ... end)
 sethidden =  missing("function", sethiddenproperty or set_hidden_property or set_hidden_prop)
 gethidden =  missing("function", gethiddenproperty or get_hidden_property or get_hidden_prop)
@@ -575,7 +573,7 @@ NotifySoundToggle.Position = UDim2.new(0, 10, 0, 30)
 NotifySoundToggle.Size = UDim2.new(1, -10, 0, 20)
 NotifySoundToggle.Font = Enum.Font.SourceSans
 NotifySoundToggle.TextSize = 14
-NotifySoundToggle.Text = "Keep Menu Open"
+NotifySoundToggle.Text = "Notification Sound"
 NotifySoundToggle.TextColor3 = Color3.new(1, 1, 1)
 NotifySoundToggle.TextXAlignment = Enum.TextXAlignment.Left
 NotifySoundToggle.ZIndex = 10
@@ -626,6 +624,9 @@ On2.Text = ""
 On2.TextColor3 = Color3.new(0, 0, 0)
 On2.ZIndex = 10
 
+local NotifySound = true
+local NotifySound = "rbxassetid://15675043410"
+-- my own toggle system - gk693
 On2.Activated:Connect(function()
 	NotifySound = not NotifySound
 	if NotifySound then
