@@ -45,6 +45,13 @@ getgc = missing("function", getgc or get_gc_objects)
 setthreadidentity = missing("function", setthreadidentity or (syn and syn.set_thread_identity) or syn_context_set or setthreadcontext)
 replicatesignal = missing("function", replicatesignal)
 
+queueteleport([[
+
+getgenv().iyc = true
+loadstring(game:HttpGet('https://raw.githubusercontent.com/gk693/infiniteyieldcracked/refs/heads/master/source'))()
+
+]])
+
 storage = "infiniteyieldcracked"
 
 if not isfolder(storage) then
@@ -13103,4 +13110,9 @@ task.spawn(function()
 	IntroBackground:Destroy()
 	minimizeHolder()
 end)
-notify("reminder", "this is a forked version of IY\ndon't complain if there's bugs")
+
+if not getgenv().iyc then
+	notify("reminder", "this is a forked version of IY\ndon't complain if there's bugs")
+else
+	notify("yo", "im back")
+end
