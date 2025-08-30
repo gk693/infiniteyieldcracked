@@ -11506,7 +11506,7 @@ addcmd('lifeforce',{},function(args, speaker)
 	if not isfile(storage .. "/lifeforce.mp3") then
 		writefile(storage .. "/lifeforce.mp3", audio)
 	end
-	local id = getcustomasset(readfile(storage .. "/lifeforce.mp3"))
+	local id = getcustomasset(storage .. "/lifeforce.mp3")
 	local sound = Instance.new("Sound", game.Players.LocalPlayer.PlayerGui)
 	sound.SoundId = id
 	sound.Looped = true
