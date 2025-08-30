@@ -11,7 +11,7 @@ function missing(t, f, fallback)
     return fallback
 end
 
-local notifysound = true
+local NotifySound = true
 
 cloneref = missing("function", cloneref, function(...) return ... end)
 sethidden =  missing("function", sethiddenproperty or set_hidden_property or set_hidden_prop)
