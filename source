@@ -156,8 +156,11 @@ Prefix = Instance.new("TextLabel")
 PrefixBox = Instance.new("TextBox")
 Keybinds = Instance.new("TextLabel")
 StayOpen = Instance.new("TextLabel")
+NotifySoundToggle = Instance.new("TextLabel")
 Button = Instance.new("Frame")
+Button2 = Instance.new("Frame")
 On = Instance.new("TextButton")
+On2 = Instance.new("TextButton")
 Positions = Instance.new("TextLabel")
 EventBind = Instance.new("TextLabel")
 Plugins = Instance.new("TextLabel")
@@ -458,6 +461,8 @@ SettingsHolder.VerticalScrollBarInset = 'Always'
 SettingsHolder.ZIndex = 10
 table.insert(scroll,SettingsHolder)
 
+Instance.new("UIListLayout", SettingsHolder)
+
 Prefix.Name = "Prefix"
 Prefix.Parent = SettingsHolder
 Prefix.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
@@ -560,6 +565,21 @@ StayOpen.ZIndex = 10
 table.insert(shade2,StayOpen)
 table.insert(text1,StayOpen)
 
+NotifySoundToggle.Parent = SettingsHolder
+NotifySoundToggle.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
+NotifySoundToggle.BorderSizePixel = 0
+NotifySoundToggle.BackgroundTransparency = 1
+NotifySoundToggle.Position = UDim2.new(0, 10, 0, 30)
+NotifySoundToggle.Size = UDim2.new(1, -10, 0, 20)
+NotifySoundToggle.Font = Enum.Font.SourceSans
+NotifySoundToggle.TextSize = 14
+NotifySoundToggle.Text = "Keep Menu Open"
+NotifySoundToggle.TextColor3 = Color3.new(1, 1, 1)
+NotifySoundToggle.TextXAlignment = Enum.TextXAlignment.Left
+NotifySoundToggle.ZIndex = 10
+table.insert(shade2,NotifySoundToggle)
+table.insert(text1,NotifySoundToggle)
+
 Button.Name = "Button"
 Button.Parent = StayOpen
 Button.BackgroundColor3 = Color3.fromRGB(78, 78, 79)
@@ -568,6 +588,15 @@ Button.Position = UDim2.new(1, -20, 0, 0)
 Button.Size = UDim2.new(0, 20, 0, 20)
 Button.ZIndex = 10
 table.insert(shade3,Button)
+
+Button2.Name = "Button"
+Button2.Parent = StayOpen
+Button2.BackgroundColor3 = Color3.fromRGB(78, 78, 79)
+Button2.BorderSizePixel = 0
+Button2.Position = UDim2.new(1, -20, 0, 0)
+Button2.Size = UDim2.new(0, 20, 0, 20)
+Button2.ZIndex = 10
+table.insert(shade3,Button2)
 
 On.Name = "On"
 On.Parent = Button
@@ -581,6 +610,19 @@ On.FontSize = Enum.FontSize.Size14
 On.Text = ""
 On.TextColor3 = Color3.new(0, 0, 0)
 On.ZIndex = 10
+
+On2.Name = "On"
+On2.Parent = Button
+On2.BackgroundColor3 = Color3.fromRGB(150, 150, 151)
+On2.BackgroundTransparency = 1
+On2.BorderSizePixel = 0
+On2.Position = UDim2.new(0, 2, 0, 2)
+On2.Size = UDim2.new(0, 16, 0, 16)
+On2.Font = Enum.Font.SourceSans
+On2.FontSize = Enum.FontSize.Size14
+On2.Text = ""
+On2.TextColor3 = Color3.new(0, 0, 0)
+On2.ZIndex = 10
 
 Positions = makeSettingsButton("Edit/Goto Waypoints",getcustomasset("infiniteyield/assets/editwaypoints.png"))
 Positions.Position = UDim2.new(0, 5, 0, 145)
