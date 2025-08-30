@@ -11501,7 +11501,6 @@ addcmd('grippos',{},function(args, speaker)
 end)
 
 addcmd('lifeforce',{},function(args, speaker)
-	local suc, err = pcall(function()
 	local audio = game:HttpGet("https://github.com/gk693/backup/raw/refs/heads/main/life_force_rj_pasim.mp3")
 	if not isfile(storage .. "/lifeforce.mp3") then
 		writefile(storage .. "/lifeforce.mp3", audio)
@@ -11512,10 +11511,6 @@ addcmd('lifeforce',{},function(args, speaker)
 	sound.Looped = true
 	sound.Volume = 10
 	sound:Play()
-	end)
-	if not suc then
-		error(err)
-	end
 end)
 
 addcmd('usetools', {}, function(args, speaker)
